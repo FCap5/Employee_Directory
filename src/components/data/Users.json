@@ -1,0 +1,35 @@
+{
+  "employees": [
+    {
+      "first": "Ffej",
+      "last": "Caplan",
+      "department": "Dev",
+      "hasDog": "No",
+      "id": 1
+    },
+    {
+      "first": "Dan",
+      "last": "Caplan",
+      "department": "Recruiting",
+      "hasDog": "Yes",
+      "id": 2
+    },
+    {
+      "first": "Dana",
+      "last": "McCabe",
+      "department": "Management",
+      "hasDog": "No",
+      "id": 3
+    },
+    {
+      "first": "Cassie",
+      "last": "Sullivan",
+      "department": "Dev",
+      "hasDog": "Yes",
+      "id": 4
+    }
+  ],
+
+  "sorted": false,
+  "check": false
+}
