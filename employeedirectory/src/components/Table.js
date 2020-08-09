@@ -33,15 +33,32 @@ export default class Table extends Component {
         id: 4,
       },
     ],
+    sorted: false,
+    check: false,
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.setState({
-      employees: this.state.employees.sort((a, b) =>
-        a.department.localeCompare(b.department)
-      ),
-    });
+    if (!this.state.sorted) {
+      this.setState({
+        // https://bit.ly/3kqpvZL
+        employees: this.state.employees.sort((a, b) =>
+          a.department.localeCompare(b.department)
+        ),
+        sorted: true,
+      });
+    } else {
+      this.setState({
+        employees: this.state.employees.sort((a, b) =>
+          b.department.localeCompare(a.department)
+        ),
+        sorted: false,
+      });
+    }
+  };
+
+  handleClick = (event) => {
+    console.log(event);
   };
   render() {
     return (
@@ -54,7 +71,7 @@ export default class Table extends Component {
               Department<button>Sort</button>
             </th>
             <th>
-              Has Dog<input type="checkbox"></input>
+              Has Dog<input type="checkbox" onClick={this.handleClick}></input>
             </th>
           </tr>
         </thead>
