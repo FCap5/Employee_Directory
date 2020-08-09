@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './css/styles.css';
 import Body from './Body';
 import Users from './data/Users.json';
+import TableHead from './TableHead';
 
-console.log(Users);
 export default class Table extends Component {
   state = Users;
 
@@ -48,36 +48,7 @@ export default class Table extends Component {
   render() {
     return (
       <table>
-        <thead>
-          <tr>
-            <th>
-              First Name
-              <button value="first" onClick={this.handleSubmit}>
-                Sort
-              </button>
-            </th>
-            <th>
-              Last Name
-              <button value="last" onClick={this.handleSubmit}>
-                Sort
-              </button>
-            </th>
-            <th>
-              Department
-              <button value="department" onClick={this.handleSubmit}>
-                Sort
-              </button>
-            </th>
-            <th>
-              Has Dog
-              <input
-                value="hasDog"
-                type="checkbox"
-                onClick={this.handleClick}
-              ></input>
-            </th>
-          </tr>
-        </thead>
+        <TableHead clickOne={this.handleSubmit} clickTwo={this.handleClick} />
         <Body value={this.state.employees} />
       </table>
     );
